@@ -1,6 +1,5 @@
 proxies:
-  - {name: rn.boowa.tk:443, server: rn.boowa.tk, port: 443, type: trojan, password: hNJtiTOO, sni: rn.boowa.tk, network: ws, udp: true, ws-opts: {path: /, headers: {Host: rn.boowa.tk}}}
-
+ 
 proxy-groups:
   - name: PROXY
     type: select
