@@ -2,15 +2,15 @@ proxies:
   - name: "vless-ws"
     type: vless
     server: rn.boowa.ga
-    port: 15888
-    uuid: 443d2d58-82d0-4279-e7a8-82c2159ea654
+    port: 443
+    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga # priority over wss host
+    servername: rn.boowa.ga
     # skip-cert-verify: true
     ws-opts:
-      path: "/"
+      path: "/xray"
       headers:
         Host: rn.boowa.ga
 
