@@ -1,5 +1,5 @@
 proxies:
-  - name: "vless-ws"
+  - name: "rn.boowa.ga"
     type: vless
     server: rn.boowa.ga
     port: 443
@@ -14,11 +14,78 @@ proxies:
       headers:
         Host: rn.boowa.ga
 
+  - name: "172.67.13.36"
+    type: vless
+    server: 172.67.13.36
+    port: 443
+    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.boowa.ga
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.boowa.ga
+
+  - name: "172.67.2.140"
+    type: vless
+    server: 172.67.2.140
+    port: 443
+    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.boowa.ga
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.boowa.ga
+
+  - name: "45.64.22.6"
+    type: vless
+    server: 45.64.22.6
+    port: 443
+    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.boowa.ga
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.boowa.ga
+     
+  - name: "172.66.44.43"
+    type: vless
+    server: 172.66.44.43
+    port: 443
+    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.boowa.ga
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.boowa.ga
+
 proxy-groups:
   - name: PROXY
-    type: select
+    type: url-test
     proxies:
-      - vless-ws
+      - rn.boowa.ga
+      - 172.67.13.36
+      - 172.67.2.140
+      - 45.64.22.6
+      - 172.66.44.43
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+
 
 # Source: https://github.com/Loyalsoldier/clash-rules
 rules:
@@ -35,7 +102,7 @@ rules:
   - RULE-SET,lancidr,DIRECT
   - RULE-SET,cncidr,DIRECT
   - RULE-SET,telegramcidr,PROXY
-  - GEOIP,,DIRECT
+  - GEOIP,LAN,DIRECT
   - GEOIP,CN,DIRECT
   - MATCH,PROXY
 
