@@ -1,90 +1,121 @@
 proxies:
-  - name: "rn.boowa.ga"
+  - name: "rn.pakwa.buzz"
     type: vless
-    server: rn.boowa.ga
+    server: rn.pakwa.buzz
     port: 443
-    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga
+    servername: rn.pakwa.buzz
     # skip-cert-verify: true
     ws-opts:
       path: "/xray"
       headers:
-        Host: rn.boowa.ga
+        Host: rn.pakwa.buzz
 
-  - name: "172.67.13.36"
+  - name: "172.66.44.51"
     type: vless
-    server: 172.67.13.36
+    server: 172.66.44.51
     port: 443
-    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga
+    servername: rn.pakwa.buzz
     # skip-cert-verify: true
     ws-opts:
       path: "/xray"
       headers:
-        Host: rn.boowa.ga
+        Host: rn.pakwa.buzz
 
-  - name: "172.67.2.140"
+  - name: "108.162.192.177"
     type: vless
-    server: 172.67.2.140
+    server: 108.162.192.177
     port: 443
-    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga
+    servername: rn.pakwa.buzz
     # skip-cert-verify: true
     ws-opts:
       path: "/xray"
       headers:
-        Host: rn.boowa.ga
+        Host: rn.pakwa.buzz
 
-  - name: "45.64.22.6"
+  - name: "119.36.161.40"
     type: vless
-    server: 45.64.22.6
+    server: 119.36.161.40
     port: 443
-    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga
+    servername: rn.pakwa.buzz
     # skip-cert-verify: true
     ws-opts:
       path: "/xray"
       headers:
-        Host: rn.boowa.ga
-     
-  - name: "172.66.44.43"
+        Host: rn.pakwa.buzz
+
+  - name: "162.159.33.10"
     type: vless
-    server: 172.66.44.43
+    server: 162.159.33.10
     port: 443
-    uuid: 88ee3a7c-126e-4b4a-a557-fb3b2b4e7d8b
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
     tls: true
     network: ws
-    servername: rn.boowa.ga
+    servername: rn.pakwa.buzz
     # skip-cert-verify: true
     ws-opts:
       path: "/xray"
       headers:
-        Host: rn.boowa.ga
+        Host: rn.pakwa.buzz
+
+  - name: "103.21.244.135"
+    type: vless
+    server: 103.21.244.135
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
 
 proxy-groups:
   - name: PROXY
-    type: url-test
+    type: load-balance
     proxies:
-      - rn.boowa.ga
-      - 172.67.13.36
-      - 172.67.2.140
-      - 45.64.22.6
-      - 172.66.44.43
-    url: 'http://www.gstatic.com/generate_204'
+      - rn.pakwa.buzz
+      - 172.66.44.51
+      - 108.162.192.177
+      - 119.36.161.40
+      - 162.159.33.10
+      - 103.21.244.135
+    url: 'http://www.google.com/generate_204'
     interval: 300
+    # strategy: consistent-hashing
+    strategy: round-robin
+    
+  # - name: PROXY
+  #   type: url-test
+  #   proxies:
+  #     - rn.pakwa.buzz
+  #     - 172.66.44.51
+  #     - 108.162.192.177
+  #     - 119.36.161.40
+  #     - 162.159.33.10
+  #     - 103.21.244.135
+  #   url: 'http://www.gstatic.com/generate_204'
+  #   interval: 300
+
 
 
 # Source: https://github.com/Loyalsoldier/clash-rules
