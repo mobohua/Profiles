@@ -14,6 +14,21 @@ proxies:
       headers:
         Host: rn.pakwa.buzz
 
+  - name: "119.36.161.40"
+    type: vless
+    server: 119.36.161.40
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+        
   - name: "172.66.44.51"
     type: vless
     server: 172.66.44.51
@@ -44,9 +59,9 @@ proxies:
       headers:
         Host: rn.pakwa.buzz
 
-  - name: "119.36.161.40"
+  - name: "172.66.0.166"
     type: vless
-    server: 119.36.161.40
+    server: 172.66.0.166
     port: 443
     uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
@@ -59,9 +74,9 @@ proxies:
       headers:
         Host: rn.pakwa.buzz
 
-  - name: "162.159.33.10"
+  - name: "162.159.62.84"
     type: vless
-    server: 162.159.33.10
+    server: 162.159.62.84
     port: 443
     uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
     udp: true
@@ -89,16 +104,98 @@ proxies:
       headers:
         Host: rn.pakwa.buzz
 
+  - name: "173.245.49.107"
+    type: vless
+    server: 173.245.49.107
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+
+  - name: "104.17.254.225"
+    type: vless
+    server: 104.17.254.225
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+
+  - name: "162.159.192.41"
+    type: vless
+    server: 162.159.192.41
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+
+  - name: "172.64.38.229"
+    type: vless
+    server: 172.64.38.229
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+
+  - name: "104.18.228.102"
+    type: vless
+    server: 104.18.228.102
+    port: 443
+    uuid: 68f2c8fc-e088-437f-a2b8-f869132b03bd
+    udp: true
+    tls: true
+    network: ws
+    servername: rn.pakwa.buzz
+    # skip-cert-verify: true
+    ws-opts:
+      path: "/xray"
+      headers:
+        Host: rn.pakwa.buzz
+
+
 proxy-groups:
   - name: PROXY
     type: load-balance
     proxies:
       - rn.pakwa.buzz
+      - 119.36.161.40
       - 172.66.44.51
       - 108.162.192.177
-      - 119.36.161.40
-      - 162.159.33.10
+      - 172.66.0.166
+      - 162.159.62.84
       - 103.21.244.135
+      - 173.245.49.107
+      - 104.17.254.225
+      - 162.159.192.41
+      - 172.64.38.229
+      - 104.18.228.102
     url: 'http://www.google.com/generate_204'
     interval: 300
     # strategy: consistent-hashing
@@ -110,8 +207,8 @@ proxy-groups:
   #     - rn.pakwa.buzz
   #     - 172.66.44.51
   #     - 108.162.192.177
-  #     - 119.36.161.40
-  #     - 162.159.33.10
+  #     - 172.66.0.166
+  #     - 162.159.62.84
   #     - 103.21.244.135
   #   url: 'http://www.gstatic.com/generate_204'
   #   interval: 300
